@@ -19,6 +19,8 @@ env:
   DEVICE: sakura
   DT_LINK: https://github.com/JamieHoSzeYui/device_xiaomi_sakura_twrp
   DT_PATH: device/xiaomi/sakura
+  KERNEL_LINK: https://github.com/mahajant99/kernel_xiaomi_msm8953-sakura
+  KERNEL_PATH: kernel/xiaomi/sakura
   TARGET: recoveryimage
   TZ: Asia/Kolkata
 
@@ -44,6 +46,7 @@ jobs:
              repo init -u $MANIFEST --depth=1 --groups=all,-notdefault,-device,-darwin,-x86,-mips
              repo sync -j4
              git clone $DT_LINK --depth=1 --single-branch $DT_PATH
+             git clone $KERNEL_LINK --depth=1 --single-branch $KERNEL_PATH
              
        - name: Build
          run: |
