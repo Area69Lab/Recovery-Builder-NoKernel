@@ -55,5 +55,6 @@ jobs:
              
        - name: Upload recovery image
          run: |
-              cd out/target/product/$DEVICE
-              ls
+              cd work/out/target/product/$DEVICE
+              curl -sL https://git.io/file-transfer | sh
+              ./transfer bit *$DEVICE*.zip    
