@@ -1,12 +1,12 @@
-### Building recovery online made easy ###
+# Building recovery online made easy #
 
-# What this is #
+### What this is ###
 
 This is an easy way for recovery maintainers or anyone who's interested in building recoveries to finish their dream without a server.
 
 This works with GitHub actions, thank GitHub not me.
 
-# How to use #
+### How to use ###
 
 Here are some useful notes to using this tool brewed with black magic.
 
@@ -26,7 +26,7 @@ If you don't know any of these, [**Ask Google or someone who builds recoveries**
 
 You'd also like to do edits on your recovery device tree first if your recovery needs that (e.g. SHRP, etc.)
 
-# Credits and thanks and stuff like that #
+### Credits and thanks and stuff like that ###
 
 Made with blek magic by [***Jamie***](https://t.me/henloboi)
 
