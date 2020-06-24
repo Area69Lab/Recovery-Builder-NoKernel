@@ -15,12 +15,12 @@ on:
     
 
 env:
-  MANIFEST: git://github.com/SKYHAWK-Recovery-Project/platform_manifest_twrp_omni.git -b android-9.0
+  MANIFEST: git://github.com/PitchBlackRecoveryProject/manifest_pb.git -b android-9.0
   DEVICE: sakura
-  DT_LINK: https://github.com/JamieHoSzeYui/device_xiaomi_sakura_twrp
-  DT_PATH: device/xiaomi/sakura
-  KERNEL_LINK: https://github.com/ZIDAN44/kernel_xiaomi_msm8953_10
-  KERNEL_PATH: kernel/xiaomi/sakura
+  DT_LINK: https://github.com/LinuxPanda/android_recovery_xiaomi_rosy
+  DT_PATH: device/xiaomi/rosy
+  KERNEL_LINK: https://github.com/Pulkit077/kernel_xiaomi_rosy
+  KERNEL_PATH: kernel/xiaomi/rosy
   TARGET: recoveryimage
   TZ: Asia/Kolkata
 
