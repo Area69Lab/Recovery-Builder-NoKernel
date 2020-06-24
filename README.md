@@ -22,7 +22,7 @@ Some variables that you'd like to set:
 
 ```TARGET : recoveryimage or bootimage, depending on if your phone has a recovery partition or not ```
 
-If you don't know any of these, [**Ask Google or someone who builds recoveries**], I don't provide TWRP building support.
+If you don't know any of these, **Ask [Google](https://www.google.com) or someone who builds recoveries**, I don't provide TWRP building support.
 
 You'd also like to do edits on your recovery device tree first if your recovery needs that (e.g. SHRP, etc.)
 
