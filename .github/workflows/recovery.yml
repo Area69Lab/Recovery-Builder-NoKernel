@@ -15,10 +15,10 @@ on:
     
 
 env:
-  MANIFEST: 
-  DT_LINK:
-  DT_PATH:
-  TARGET:
+  MANIFEST: git://github.com/SKYHAWK-Recovery-Project/platform_manifest_twrp_omni.git -b android-9.0
+  DT_LINK: https://github.com/JamieHoSzeYui/device_xiaomi_sakura_twrp
+  DT_PATH: device/xiaomi/sakura
+  TARGET: recoveryimage
   TZ: Asia/Kolkata
 
 jobs:
