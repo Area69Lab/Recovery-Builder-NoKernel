@@ -16,6 +16,7 @@ on:
 
 env:
   MANIFEST: git://github.com/SKYHAWK-Recovery-Project/platform_manifest_twrp_omni.git -b android-9.0
+  DEVICE: sakura
   DT_LINK: https://github.com/JamieHoSzeYui/device_xiaomi_sakura_twrp
   DT_PATH: device/xiaomi/sakura
   TARGET: recoveryimage
@@ -47,6 +48,6 @@ jobs:
        - name: Build
          run: |
               cd work
-              . build/envsetup.sh &&lunch onmi_$device-eng &&export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET
+              . build/envsetup.sh &&lunch onmi_$DEVICE-eng &&export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET
              
             
