@@ -53,4 +53,7 @@ jobs:
               cd work
               . build/envsetup.sh &&lunch omni_$DEVICE-eng &&export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET
              
-            
+       - name: Upload recovery image
+         run: |
+              cd out/target/product/$DEVICE
+              ls
