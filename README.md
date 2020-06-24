@@ -20,6 +20,10 @@ Some variables that you'd like to set:
 
 ```DT_PATH : Path to clone your device tree ```
 
+```KERNEL_LINK : Link to your device kernel source ```
+
+```KERNEL_PATH : Path to clone your kernel tree ```
+
 ```TARGET : recoveryimage or bootimage, depending on if your phone has a recovery partition or not ```
 
 If you don't know any of these, **Ask [Google](https://www.google.com) or someone who builds recoveries**, I don't provide TWRP building support.
@@ -31,6 +35,8 @@ You'd also like to do edits on your recovery device tree first if your recovery 
 Made with blek magic by [***Jamie***](https://t.me/henloboi)
 
 Infinite help from [***ElytrA8***](t.me/ElytrA8)
+
+Recovery building help from [***Pulkit***](t.me/Pulkit077)
 
 And lastly, all TWRP compiling help from Google.
 
