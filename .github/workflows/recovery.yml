@@ -46,6 +46,7 @@ jobs:
              
        - name: Build
          run: |
+              cd work
               . build/envsetup.sh &&lunch onmi_$device-eng &&export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET
              
             
