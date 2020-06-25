@@ -1,14 +1,6 @@
 name: Building recovery
 
-on:
-  release:
-    types: [published]
-    push:
-    branches:
-      - master
-  watch:
-    types: [started]
-    
+on:push
 
 env:
   MANIFEST: git://github.com/PitchBlackRecoveryProject/manifest_pb.git -b android-9.0
