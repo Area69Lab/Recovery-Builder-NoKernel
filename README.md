@@ -1,14 +1,22 @@
 # Building recovery online made easy #
 
-### What this is ###
+## Important notice ##
+### Users reported build errors forking to own account. ###
+### To fix this, create a new organization, fork to the new organization. This fixes the problem, for now.###
+
+#### What this is ####
 
 This is an easy way for recovery maintainers or anyone who's interested in building recoveries to finish their dream without a server.
 
 This works with GitHub actions, thank GitHub not me.
 
-### How to use ###
+#### How to use ####
 
 Here are some useful notes to using this tool brewed with black magic.
+
+1. Fork the repo to a organization
+
+2. Set the variables, as listed below.
 
 Some variables that you'd like to set:
 
@@ -26,11 +34,15 @@ Some variables that you'd like to set:
 
 ```TARGET : recoveryimage or bootimage, depending on if your phone has a recovery partition or not ```
 
+3. Go to actions tab, enable workflows.
+
+4. Star the repo, go to actions tab again, and let black magic go brrr.
+
 If you don't know any of these, **Ask [Google](https://www.google.com) or someone who builds recoveries**, I don't provide TWRP building support.
 
 You'd also like to do edits on your recovery device tree first if your recovery needs that (e.g. SHRP, etc.)
 
-### Credits and thanks and stuff like that ###
+#### Credits and thanks and stuff like that ####
 
 Made with blek magic by [***Jamie***](https://t.me/henloboi)
 
