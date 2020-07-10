@@ -18,6 +18,8 @@ Here are some useful notes to using this tool brewed with black magic.
 
 2. Set the variables, as listed below.
 
+Update : If you don't understand the manifest variable, check [this](https://github.com/Area69Lab/Recovery-builder/blob/master/guide.md)
+
 Some variables that you'd like to set:
 
 ```MANIFEST : Link to your recovery manifest, Google it if you don't know what this is```
