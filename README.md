@@ -30,10 +30,6 @@ Some variables that you'd like to set:
 
 ```DT_PATH : Path to clone your device tree ```
 
-```KERNEL_LINK : Link to your device kernel source ```
-
-```KERNEL_PATH : Path to clone your kernel tree ```
-
 ```TARGET : recoveryimage or bootimage, depending on if your phone has a recovery partition or not ```
 
 3. Go to actions tab, enable workflows.
