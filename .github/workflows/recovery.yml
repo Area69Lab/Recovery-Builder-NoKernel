@@ -15,9 +15,9 @@ on:
 
 env:
   MANIFEST: https://gitlab.com/OrangeFox/Manifest.git
-  DEVICE: CPH1861
-  DT_LINK: https://github.com/JamieHoSzeYui/dummy_CPH1861_TWRP
-  DT_PATH: device/oppo/CPH1861
+  DEVICE: rosy
+  DT_LINK: https://github.com/ElytrA8/recovery_rosy
+  DT_PATH: device/xiaomi/rosy
   TARGET: recoveryimage
   TZ: Asia/Kolkata
 
@@ -61,4 +61,4 @@ jobs:
          run: |
               cd work/out/target/product/$DEVICE
               curl -sL https://git.io/file-transfer | sh
-              ./transfer bit *.zip    
+              ./transfer wet *.zip    
