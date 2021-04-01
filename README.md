@@ -24,6 +24,8 @@ Some variables that you'd like to set:
 
 ```MANIFEST : Link to your recovery manifest, Google it if you don't know what this is```
 
+```MANIFEST_BRANCH : Branch of your recovery manifest. Again, Google it if you don't know what this is```
+
 ```DEVICE : Most likely your device codename, e.g. rosy, sakura, curtana, etc.```
 
 ```DT_LINK : Link to your recovery device tree.```
