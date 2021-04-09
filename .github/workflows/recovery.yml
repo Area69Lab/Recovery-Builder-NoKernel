@@ -61,7 +61,7 @@ jobs:
          env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
          with:
-          tag_name: v0.4
+          tag_name: v0.5
           name: test 1
           files: | 
             work/out/target/product/RMX1801/recovery.img
