@@ -14,11 +14,11 @@ on:
     types: [started]
 
 env:
-  MANIFEST: https://gitlab.com/OrangeFox/Manifest.git
-  MANIFEST_BRANCH: fox_9.0
-  DEVICE: rosy
-  DT_LINK: https://github.com/ElytrA8/recovery_rosy
-  DT_PATH: device/xiaomi/rosy
+  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni
+  MANIFEST_BRANCH: twrp-9.0
+  DEVICE: TB7104F
+  DT_LINK: https://github.com/SebaUbuntu-Recovery-Lab/android_device_lenovo_TB7104F
+  DT_PATH: device/lenovo/TB7104F
   TARGET: recoveryimage
   TZ: Asia/Kolkata
 
