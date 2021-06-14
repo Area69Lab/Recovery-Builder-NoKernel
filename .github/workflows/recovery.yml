@@ -14,8 +14,8 @@ on:
     types: [started]
 
 env:
-  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git
-  MANIFEST_BRANCH: twrp_9.0
+  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni
+  MANIFEST_BRANCH: twrp-9.0
   DEVICE: rosy
   DT_LINK: https://github.com/ElytrA8/recovery_rosy
   DT_PATH: device/xiaomi/rosy
