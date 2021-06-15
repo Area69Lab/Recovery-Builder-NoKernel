@@ -14,12 +14,12 @@ on:
     types: [started]
 
 env:
-  MANIFEST: https://gitlab.com/OrangeFox/Manifest.git
-  MANIFEST_BRANCH: fox_9.0
+  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni
+  MANIFEST_BRANCH: twrp-6.0
 
-  DEVICE: TB7104F
-  DT_LINK: https://github.com/aks-glitch/android_device_lenovo_TB7104F
-  DT_PATH: device/lenovo/TB7104F
+  DEVICE: 1606
+  DT_LINK: https://github.com/SebaUbuntu-Recovery-Lab/android_device_vivo_PD1628F_EX
+  DT_PATH: device/vivo/1606
   TARGET: recoveryimage
   TZ: Asia/Kolkata
 
