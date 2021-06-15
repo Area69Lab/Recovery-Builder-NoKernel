@@ -17,9 +17,9 @@ env:
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni
   MANIFEST_BRANCH: twrp-6.0
 
-  DEVICE: 1606
+  DEVICE: PD1628F_EX
   DT_LINK: https://github.com/SebaUbuntu-Recovery-Lab/android_device_vivo_PD1628F_EX
-  DT_PATH: device/vivo/1606
+  DT_PATH: device/vivo/PD1628F_EX
   TARGET: recoveryimage
   TZ: Asia/Kolkata
 
