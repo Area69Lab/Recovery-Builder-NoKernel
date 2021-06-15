@@ -14,8 +14,8 @@ on:
     types: [started]
 
 env:
-  MANIFEST: git://github.com/SKYHAWK-Recovery-Project/platform_manifest_twrp_omni.git
-  MANIFEST_BRANCH: android-9.0
+  MANIFEST: https://github.com/PitchBlackRecoveryProject/manifest_pb
+  MANIFEST_BRANCH: android-8.1
 
   DEVICE: TB7104F
   DT_LINK: https://github.com/aks-glitch/android_device_lenovo_TB7104F
