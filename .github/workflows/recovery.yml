@@ -14,12 +14,12 @@ on:
     types: [started]
 
 env:
-  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni
-  MANIFEST_BRANCH: twrp-8.1
+  MANIFEST: git://github.com/SKYHAWK-Recovery-Project/platform_manifest_twrp_omni.git
+  MANIFEST_BRANCH: android-9.0
 
-  DEVICE: PD1628F_EX
-  DT_LINK: https://github.com/SebaUbuntu-Recovery-Lab/android_device_vivo_PD1628F_EX
-  DT_PATH: device/vivo/PD1628F_EX
+  DEVICE: TB7104F
+  DT_LINK: https://github.com/aks-glitch/android_device_lenovo_TB7104F
+  DT_PATH: device/lenovo/TB7104F
   TARGET: recoveryimage
   TZ: Asia/Kolkata
 
