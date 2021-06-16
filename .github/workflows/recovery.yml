@@ -14,8 +14,8 @@ on:
     types: [started]
 
 env:
-  MANIFEST: https://github.com/SHRP/platform_manifest_twrp_omni
-  MANIFEST_BRANCH: v3_9.0
+  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni
+  MANIFEST_BRANCH: twrp-9.0
 
   DEVICE: TB7104F
   DT_LINK: https://github.com/aks-glitch/android_device_lenovo_TB7104F
