@@ -14,12 +14,12 @@ on:
     types: [started]
 
 env:
-  MANIFEST: https://github.com/PitchBlackRecoveryProject/manifest_pb
-  MANIFEST_BRANCH: android-8.1
+  MANIFEST: https://github.com/SHRP/platform_manifest_twrp_omni
+  MANIFEST_BRANCH: v3_10.0
 
-  DEVICE: TB7104F
-  DT_LINK: https://github.com/aks-glitch/android_device_lenovo_TB7104F
-  DT_PATH: device/lenovo/TB7104F
+  DEVICE: phoenixin
+  DT_LINK: https://github.com/darkphoenixin/android_device_xiaomi_phoenixin
+  DT_PATH: device/xiomi/phoenixin
   TARGET: recoveryimage
   TZ: Asia/Kolkata
 
@@ -51,7 +51,7 @@ jobs:
              mkdir work
              cd work
              
-             repo init -u $MANIFEST -b $MANIFEST_BRANCH --depth=1 --groups=all,-notdefault,-device,-darwin,-x86,-mips
+             repo init -u $MANIFEST -b $MANIFEST_BRANCH 
              repo sync -j4
              git clone $DT_LINK --depth=1 --single-branch $DT_PATH
              
