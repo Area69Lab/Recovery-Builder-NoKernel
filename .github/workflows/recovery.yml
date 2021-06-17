@@ -19,7 +19,7 @@ env:
 
   DEVICE: phoenixin
   DT_LINK: https://github.com/darkphoenixin/android_device_xiaomi_phoenixin
-  DT_PATH: device/xisomi/phoenixin
+  DT_PATH: device/xiaomi/phoenixin
   TARGET: recoveryimage
   TZ: Asia/Kolkata
 
