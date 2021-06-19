@@ -51,7 +51,7 @@ jobs:
              mkdir work
              cd work
              
-             repo init -u $MANIFEST -b $MANIFEST_BRANCH --depth=1 
+             repo init -u $MANIFEST -b $MANIFEST_BRANCH 
              repo sync -j4
              git clone $DT_LINK --depth=1 --single-branch $DT_PATH
              
