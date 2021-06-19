@@ -15,7 +15,7 @@ on:
 
 env:
   MANIFEST: https://github.com/RedWolfRecovery/rw_manifest
-  MANIFEST_BRANCH: rw-n
+  #MANIFEST_BRANCH: rw-n
 
   DEVICE: TB7104F
   DT_LINK: https://github.com/aks-glitch/android_device_lenovo_TB7104F
