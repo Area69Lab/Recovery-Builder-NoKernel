@@ -17,9 +17,9 @@ env:
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni
   MANIFEST_BRANCH: twrp-10.0
 
-  DEVICE: Infinix-X687
+  DEVICE: Infinix_X687
   DT_LINK: https://github.com/kusti420/android_device_Infinix_Zero_8_X687
-  DT_PATH: device/infinix/Infinix-X687
+  DT_PATH: device/infinix/Infinix_X687
   TARGET: recoveryimage
   TZ: Asia/Kolkata
 
