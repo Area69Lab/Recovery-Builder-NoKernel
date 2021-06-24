@@ -18,7 +18,7 @@ env:
   MANIFEST_BRANCH: android-10.0
 
   DEVICE: sweet
-  DT_LINK: https://github.com/nebrassy/device_xiaomi_sweet-TWRP
+  DT_LINK: https://github.com/aks-glitch/device_xiaomi_sweet-TWRP
   DT_PATH: device/xiaomi/sweet
   TARGET: recoveryimage
   TZ: Asia/Kolkata
