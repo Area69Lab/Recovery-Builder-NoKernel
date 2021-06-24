@@ -14,12 +14,12 @@ on:
     types: [started]
 
 env:
-  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni
-  MANIFEST_BRANCH: twrp-9.0
+  MANIFEST: https://github.com/PitchBlackRecoveryProject/manifest_pb
+  MANIFEST_BRANCH: android-10.0
 
-  DEVICE: TB7104F
-  DT_LINK: https://github.com/aks-glitch/android_device_lenovo_TB7104F
-  DT_PATH: device/lenovo/TB7104F
+  DEVICE: sweet
+  DT_LINK: https://github.com/nebrassy/device_xiaomi_sweet-TWRP
+  DT_PATH: device/xiaomi/sweet
   TARGET: recoveryimage
   TZ: Asia/Kolkata
 
