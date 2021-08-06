@@ -1,4 +1,4 @@
-name: Building recovery
+name: MR Recovery
 
 on:
 #  release:
@@ -16,9 +16,9 @@ on:
 env:
   MANIFEST: https://gitlab.com/OrangeFox/Manifest.git
   MANIFEST_BRANCH: fox_9.0
-  DEVICE: rosy
-  DT_LINK: https://github.com/ElytrA8/recovery_rosy
-  DT_PATH: device/xiaomi/rosy
+  DEVICE: troika
+  DT_LINK: https://github.com/moto-9609/twrp_device_motorola_troika
+  DT_PATH: device/moto/troika
   TARGET: recoveryimage
   TZ: Asia/Kolkata
 
