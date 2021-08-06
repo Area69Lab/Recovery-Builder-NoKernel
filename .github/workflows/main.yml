@@ -1,0 +1,69 @@
+name: MR Recovery
+
+on:
+#  release:
+#    types: [published]
+#  push:
+#    branches:
+#      - master
+#    paths:
+#      - '.config'
+#  schedule:
+#    - cron: 0 8 * * 5
+  watch:
+    types: [started]
+
+env:
+  MANIFEST: https://gitlab.com/OrangeFox/Manifest.git
+  MANIFEST_BRANCH: fox_9.0
+  DEVICE: troika
+  DT_LINK: https://github.com/moto-9609/twrp_device_motorola_troika
+  DT_PATH: device/moto/troika
+  TARGET: recoveryimage
+  TZ: Asia/Kolkata
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+
+    steps:
+       - name: Checkout
+         uses: actions/checkout@master
+         
+
+       - name: Initializing environment
+         run: |
+            sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d
+            docker rmi `docker images -q`
+            sudo apt-get remove account-plugin-facebook account-plugin-flickr account-plugin-jabber account-plugin-salut account-plugin-twitter account-plugin-windows-live account-plugin-yahoo aisleriot brltty duplicity empathy empathy-common example-content gnome-accessibility-themes gnome-contacts gnome-mahjongg gnome-mines gnome-orca gnome-screensaver gnome-sudoku gnome-video-effects gnomine landscape-common libreoffice-avmedia-backend-gstreamer libreoffice-base-core libreoffice-calc libreoffice-common libreoffice-core libreoffice-draw libreoffice-gnome libreoffice-gtk libreoffice-impress libreoffice-math libreoffice-ogltrans libreoffice-pdfimport libreoffice-style-galaxy libreoffice-style-human libreoffice-writer libsane libsane-common mcp-account-manager-uoa python3-uno rhythmbox rhythmbox-plugins rhythmbox-plugin-zeitgeist sane-utils shotwell shotwell-common telepathy-gabble telepathy-haze telepathy-idle telepathy-indicator telepathy-logger telepathy-mission-control-5 telepathy-salut totem totem-common totem-plugins printer-driver-brlaser printer-driver-foo2zjs printer-driver-foo2zjs-common printer-driver-m2300w printer-driver-ptouch printer-driver-splix
+            git config --global user.name "ElytrA8"
+            git config --global user.email "manofuranium@gmail.com"         
+            sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php* 
+            sudo -E apt-get clean
+            sudo -E apt-get -qq update
+            sudo -E apt-get -qq install bc build-essential zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex curl  bison aria2
+            sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
+            sudo chmod a+rx /usr/local/bin/repo
+            
+       - name: Sync recovery source and device tree
+         run: |
+             mkdir work
+             cd work
+             repo init -u $MANIFEST -b $MANIFEST_BRANCH --depth=1 --groups=all,-notdefault,-device,-darwin,-x86,-mips
+             repo sync -j4
+             git clone $DT_LINK --depth=1 --single-branch $DT_PATH
+             
+       - name: Build
+         run: |
+              cd work
+              . build/envsetup.sh &&lunch omni_$DEVICE-eng &&export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET
+             
+       - uses: actions/upload-artifact@v2
+         with:
+          name: recoveryzip
+          path: work/out/target/product/*/*.zip
+
+       - uses: actions/upload-artifact@v2
+         with:
+          name: recoveryimage
+          path: work/out/target/product/*/*.img
