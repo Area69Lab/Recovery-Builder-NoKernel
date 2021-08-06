@@ -1,4 +1,4 @@
-name: MR Recovery
+name: CLI
 
 on:
 #  release:
