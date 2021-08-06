@@ -1,11 +1,11 @@
-name: CLI
+name: CI
 
 on:
 #  release:
 #    types: [published]
 #  push:
 #    branches:
-#      - master
+#      - main
 #    paths:
 #      - '.config'
 #  schedule:
