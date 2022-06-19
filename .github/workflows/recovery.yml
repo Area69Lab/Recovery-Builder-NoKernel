@@ -14,11 +14,12 @@ on:
     types: [started]
 
 env:
-  MANIFEST: https://gitlab.com/OrangeFox/Manifest.git
-  MANIFEST_BRANCH: fox_9.0
-  DEVICE: rosy
-  DT_LINK: https://github.com/ElytrA8/recovery_rosy
-  DT_PATH: device/xiaomi/rosy
+  MANIFEST: https://github.com/PterodonRecovery/manifest
+  MANIFEST_BRANCH: master 
+
+  DEVICE: TB7104F
+  DT_LINK: https://github.com/aks-glitch/android_device_lenovo_TB7104F
+  DT_PATH: device/lenovo/TB7104F
   TARGET: recoveryimage
   TZ: Asia/Kolkata
 
@@ -49,21 +50,18 @@ jobs:
          run: |
              mkdir work
              cd work
-             repo init -u $MANIFEST -b $MANIFEST_BRANCH --depth=1 --groups=all,-notdefault,-device,-darwin,-x86,-mips
+             
+             repo init -u $MANIFEST -b $MANIFEST_BRANCH --depth=1
              repo sync -j4
              git clone $DT_LINK --depth=1 --single-branch $DT_PATH
              
        - name: Build
          run: |
               cd work
-              . build/envsetup.sh &&lunch omni_$DEVICE-eng &&export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET
              
        - uses: actions/upload-artifact@v2
          with:
           name: recoveryzip
           path: work/out/target/product/*/*.zip
 
-       - uses: actions/upload-artifact@v2
-         with:
-          name: recoveryimage
-          path: work/out/target/product/*/*.img
+       
