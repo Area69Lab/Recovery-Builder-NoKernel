@@ -4,7 +4,7 @@ name: CI
 
 # Controls when the workflow will run
 
-name: TWRP Recovery
+name: TWRPs Recovery
 
 on:
 #  release:
