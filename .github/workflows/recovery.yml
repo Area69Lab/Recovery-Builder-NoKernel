@@ -1,19 +1,19 @@
 name: Build Recovery
 
 on:
-#  push:
-#    branches: [ android-12 ]
+  #  push:
+  #    branches: [ android-12 ]
   workflow_dispatch:
 
 env:
-  MANIFEST: 
-  MANIFEST_BRANCH: 
-  DEVICE: 
-  DT_LINK: 
-  DT_PATH: 
+  MANIFEST:
+  MANIFEST_BRANCH:
+  DEVICE:
+  DT_LINK:
+  DT_PATH:
   TARGET: recoveryimage
   TZ: Asia/Kolkata
-  GIT_USER_NAME: 
+  GIT_USER_NAME:
   GIT_USER_EMAIL:
 
 jobs:
@@ -21,51 +21,50 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    
-    - name: Setting-up environment
-      run: |
-            sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d
-            docker rmi `docker images -q`
-            sudo apt-get remove account-plugin-facebook account-plugin-flickr account-plugin-jabber account-plugin-salut account-plugin-twitter account-plugin-windows-live account-plugin-yahoo aisleriot brltty duplicity empathy empathy-common example-content gnome-accessibility-themes gnome-contacts gnome-mahjongg gnome-mines gnome-orca gnome-screensaver gnome-sudoku gnome-video-effects gnomine landscape-common libreoffice-avmedia-backend-gstreamer libreoffice-base-core libreoffice-calc libreoffice-common libreoffice-core libreoffice-draw libreoffice-gnome libreoffice-gtk libreoffice-impress libreoffice-math libreoffice-ogltrans libreoffice-pdfimport libreoffice-style-galaxy libreoffice-style-human libreoffice-writer libsane libsane-common mcp-account-manager-uoa python3-uno rhythmbox rhythmbox-plugins rhythmbox-plugin-zeitgeist sane-utils shotwell shotwell-common telepathy-gabble telepathy-haze telepathy-idle telepathy-indicator telepathy-logger telepathy-mission-control-5 telepathy-salut totem totem-common totem-plugins printer-driver-brlaser printer-driver-foo2zjs printer-driver-foo2zjs-common printer-driver-m2300w printer-driver-ptouch printer-driver-splix
-            git config --global user.name "${{ env.GIT_USER_NAME }}"
-            git config --global user.email "${{ env.GIT_USER_EMAIL }}"
-            sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php* 
-            sudo -E apt-get clean
-            sudo -E apt-get -qq update
-            sudo -E apt-get -qq install bc build-essential zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex curl  bison aria2
-            sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
-            sudo chmod a+rx /usr/local/bin/repo
-            
-       - name: Syncing recovery source and device tree
-         run: |
-             mkdir work
-             cd work
-             repo init -u $MANIFEST -b $MANIFEST_BRANCH --depth=1 --groups=all,-notdefault,-device,-darwin,-x86,-mips
-             repo sync -j4
-             git clone $DT_LINK --depth=1 --single-branch $DT_PATH
+      - name: Checkout
+        uses: actions/checkout@v2
 
-       - name: Building Recovery
-         run: |
-              cd work
-              . build/envsetup.sh && lunch omni_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET
+      - name: Setting-up environment
+        run: |
+          sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d
+          docker rmi `docker images -q`
+          sudo apt-get remove account-plugin-facebook account-plugin-flickr account-plugin-jabber account-plugin-salut account-plugin-twitter account-plugin-windows-live account-plugin-yahoo aisleriot brltty duplicity empathy empathy-common example-content gnome-accessibility-themes gnome-contacts gnome-mahjongg gnome-mines gnome-orca gnome-screensaver gnome-sudoku gnome-video-effects gnomine landscape-common libreoffice-avmedia-backend-gstreamer libreoffice-base-core libreoffice-calc libreoffice-common libreoffice-core libreoffice-draw libreoffice-gnome libreoffice-gtk libreoffice-impress libreoffice-math libreoffice-ogltrans libreoffice-pdfimport libreoffice-style-galaxy libreoffice-style-human libreoffice-writer libsane libsane-common mcp-account-manager-uoa python3-uno rhythmbox rhythmbox-plugins rhythmbox-plugin-zeitgeist sane-utils shotwell shotwell-common telepathy-gabble telepathy-haze telepathy-idle telepathy-indicator telepathy-logger telepathy-mission-control-5 telepathy-salut totem totem-common totem-plugins printer-driver-brlaser printer-driver-foo2zjs printer-driver-foo2zjs-common printer-driver-m2300w printer-driver-ptouch printer-driver-splix
+          git config --global user.name "${{ env.GIT_USER_NAME }}"
+          git config --global user.email "${{ env.GIT_USER_EMAIL }}"
+          sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php* 
+          sudo -E apt-get clean
+          sudo -E apt-get -qq update
+          sudo -E apt-get -qq install bc build-essential zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex curl  bison aria2
+          sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
+          sudo chmod a+rx /usr/local/bin/repo
 
-#       - name: Upload Build Artifacts
-#         uses: actions/upload-artifact@v2
-#         with:
-#          name: Recovery Artifacts
-#          path: |
-#            ${{ env.BUILD_DIRECTORY }}/out/target/product/${{ env.DEVICE }}/recovery.img
-#            ${{ env.BUILD_DIRECTORY }}/out/target/product/${{ env.DEVICE }}/*.zip
+      - name: Syncing recovery source and device tree
+        run: |
+          mkdir work
+          cd work
+          repo init -u $MANIFEST -b $MANIFEST_BRANCH --depth=1 --groups=all,-notdefault,-device,-darwin,-x86,-mips
+          repo sync -j4
+          git clone $DT_LINK --depth=1 --single-branch $DT_PATH
 
-             
-       - uses: actions/upload-artifact@v2
-         with:
+      - name: Building Recovery
+        run: |
+          cd work
+          . build/envsetup.sh && lunch omni_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET
+
+      #       - name: Upload Build Artifacts
+      #         uses: actions/upload-artifact@v2
+      #         with:
+      #          name: Recovery Artifacts
+      #          path: |
+      #            ${{ env.BUILD_DIRECTORY }}/out/target/product/${{ env.DEVICE }}/recovery.img
+      #            ${{ env.BUILD_DIRECTORY }}/out/target/product/${{ env.DEVICE }}/*.zip
+
+      - uses: actions/upload-artifact@v2
+        with:
           name: recoveryzip
           path: work/out/target/product/*/*.zip
 
-       - uses: actions/upload-artifact@v2
-         with:
+      - uses: actions/upload-artifact@v2
+        with:
           name: recoveryimage
           path: work/out/target/product/*/*.img
