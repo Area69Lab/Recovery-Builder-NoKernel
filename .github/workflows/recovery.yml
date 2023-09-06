@@ -16,9 +16,9 @@ on:
 env:
   MANIFEST: https://gitlab.com/OrangeFox/Manifest.git
   MANIFEST_BRANCH: fox_9.0
-  DEVICE: rosy
-  DT_LINK: https://github.com/ElytrA8/recovery_rosy
-  DT_PATH: device/xiaomi/rosy
+  DEVICE: C0070WW
+  DT_LINK: https://github.com/twrpdtgen/android_device_blu_C0070WW/tree/sp9832e_1h10_gofu-user-10-QP1A.190711.020-46411-release-keys
+  DT_PATH: device/blu/C0070WW
   TARGET: recoveryimage
   TZ: Asia/Kolkata
 
